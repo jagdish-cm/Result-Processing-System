@@ -1,0 +1,13 @@
+mat-sidenav {
+    width: 200px;
+}
+
+.fixed-header {
+    top: 0;
+    position: fixed;
+    z-index: 999;
+}
+
+mat-sidenav-content {
+    background-color: white;
+}

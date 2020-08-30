@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "result-processing-system-a3e59": {
+      "hosting": {
+        "ResultProcessing": [
+          "result-processing-system-a3e59"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "result-processing-system-a3e59"
+  }
+}

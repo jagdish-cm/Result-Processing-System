@@ -1,0 +1,15 @@
+body {
+    background-image: url('https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/07/24/851731-result-2.jpg');
+    font-family: 'Numans', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    min-width: 1024px;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}

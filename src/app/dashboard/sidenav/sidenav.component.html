@@ -1,0 +1,23 @@
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav [fixedInViewport]="true" mode="side" opened >
+    <mat-toolbar>
+      
+    </mat-toolbar>
+
+    <mat-nav-list>
+    
+      <a mat-list-item [routerLink]="'/student'">Add Student</a>
+      <a mat-list-item [routerLink]="'/course'">Add Course</a>
+      <a mat-list-item [routerLink]="'/marks'">Add Marks</a>
+      <a mat-list-item [routerLink]="'/result'">Check Result</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content align="center" fullscreen>
+    <mat-toolbar class="fixed-header" color='primary'>
+      Result Processing System
+    </mat-toolbar>
+    <br><br><br>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

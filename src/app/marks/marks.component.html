@@ -1,0 +1,72 @@
+
+<div class="marks-container">
+  
+  <br><br><br>
+  <mat-form-field class="form1" appearance="fill">
+    <mat-label >Enrolment No.</mat-label>
+    <input matInput [(ngModel)]="marks.Enrol_no">
+  </mat-form-field>
+  
+  <mat-form-field class="form1" appearance="fill">
+    <mat-label>Year of Degree</mat-label>
+    <input matInput [(ngModel)]="marks.Year">
+  </mat-form-field>
+
+  <mat-form-field class="form1" appearance="fill">
+    <mat-label>Semester</mat-label>
+    <input matInput [(ngModel)]="marks.Semester">
+  </mat-form-field>
+
+  <mat-form-field class="form1" appearance="fill">
+    <mat-label>Appearing Year</mat-label>
+    <input matInput [(ngModel)]="marks.App_year">
+  </mat-form-field>
+
+  <div class="enter-marks">
+    <button mat-raised-button class="btn-enter" color="primary" (click)="enterMarks()">Enter Marks</button>
+  </div>
+  <br>  
+
+  <div class="divtitle" >
+      <div *ngFor="let i of semCourses">
+      <div class="divid"><h3 class="h3-class">{{i['Course_id']}}</h3></div>
+      <div class="divname"><h3 class="h3-class">{{i['Course_name']}}</h3></div>
+    </div>
+  </div>
+
+  <div class="divform" [formGroup]="form" *ngIf="semCourses">  
+    
+    <div formArrayName="courses">
+    
+      <div class= "div3"*ngFor="let course of getCourses(); let i=index">
+        <div [formGroupName]="i">
+
+          <mat-form-field class="form2" appearance="fill">
+            <mat-label>Midterm Marks</mat-label>
+            <input matInput type="number" formControlName="midMarks">
+          </mat-form-field>
+          
+          <mat-form-field class="form2" appearance="fill">
+            <mat-label>Practical Marks</mat-label>
+            <input matInput type="number" formControlName="pracMarks">
+          </mat-form-field>
+          
+          <mat-form-field class="form2" appearance="fill">
+            <mat-label>Theory Marks</mat-label>
+            <input matInput type="number" formControlName="thrMarks">
+          </mat-form-field>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  
+  </div>
+  
+  
+</div>
+<div class="btnadd">
+<button [disabled]="isdisabled" mat-raised-button color="primary" (click)="addMarks()">Add Marks</button>  
+<br><br>
+</div>

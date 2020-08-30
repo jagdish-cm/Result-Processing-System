@@ -1,0 +1,40 @@
+<div class="student-container">
+  
+  <br><br><br><br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Enrolment No.</mat-label>
+    <input matInput [(ngModel)]="stu.Enrol_no">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Student Name</mat-label>
+    <input matInput [(ngModel)]="stu.Name">
+  </mat-form-field>
+  <br>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Enrolment Year</mat-label>
+    <input matInput [(ngModel)]="stu.Enrol_year">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Department</mat-label>
+    <mat-select [(ngModel)]="stu.Department">
+      <mat-option value="Agriculture">Agriculture</mat-option>
+      <mat-option value="Computer Science">Computer Science</mat-option>
+      <mat-option value="Civil">Civil</mat-option>
+      <mat-option value="Electrical">Electrical</mat-option>
+      <mat-option value="Electronics and Communication">Electronics and Communication</mat-option>
+      <mat-option value="Information Technology">Information Technology</mat-option>
+      <mat-option value="Mechanical">Mechanical</mat-option>
+      <mat-option value="Mining">Mining</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+
+  <section>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="addStudent()">Add Student</button>
+    </div>
+  </section>
+</div>

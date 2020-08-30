@@ -1,0 +1,57 @@
+<div class="course-container">
+  
+  <br><br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Enrolment Year</mat-label>
+    <input matInput [(ngModel)]="course.Enrol_year">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Course ID</mat-label>
+    <input matInput [(ngModel)]="course.Course_id">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Course Name</mat-label>
+    <input matInput [(ngModel)]="course.Course_name">
+  </mat-form-field>
+  <br>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Year</mat-label>
+    <mat-select [(ngModel)]="course.Year">
+      <mat-option value={{number}} *ngFor="let number of [1,2,3,4]">{{number}}</mat-option>
+      
+      
+    </mat-select>
+  </mat-form-field>
+  <br>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Semester</mat-label>
+    <mat-select type="number" [(ngModel)]="course.Semester">
+      <mat-option value={{num}} *ngFor="let num of [1,2,3,4,5,6,7,8]">{{num}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Theory Credits</mat-label>
+    <input matInput type="number" [(ngModel)]="course.Theory_credits">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Practical Credits</mat-label>
+    <input matInput type="number" [(ngModel)]="course.Practical_credits">
+  </mat-form-field>
+  <br>
+
+  <section>
+    <div class="example-button-row">
+        <button mat-raised-button color="primary" (click)="addCourse()">Add Course</button>
+    </div>
+  </section>
+</div>

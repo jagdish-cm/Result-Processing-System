@@ -1,0 +1,123 @@
+<div *ngIf="!clicked" class="result-container">
+  <br><br><br><br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Enrolment No.</mat-label>
+    <input matInput [(ngModel)]="result.Enrol_no">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Semester</mat-label>
+    <input matInput type="number" [(ngModel)]="result.Semester">
+  </mat-form-field>
+  <br>
+  
+  <section>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary"(click)="showResult()">Show Result</button>
+    </div>
+  </section>
+</div>
+<br><br>
+
+<div class="det" *ngIf="clicked">
+    <span class="span1">Name: {{stu[0].Name}}</span>
+    <span class="span1"> Enrolment No.: {{stu[0].Enrol_no}} </span>
+    <span class="span1"> Semester: {{this.result.Semester}}</span>
+    <br>
+</div>
+<br>
+
+<ng-container *ngIf="clicked">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  
+  <ng-container matColumnDef="courseno">
+    <th mat-header-cell *matHeaderCellDef>Course No.</th>
+    <td mat-cell *matCellDef="let element"> {{element.courseno}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell class="title-head" *matHeaderCellDef>Title of the Course</th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="thMarks">
+    <th mat-header-cell *matHeaderCellDef>Theory</th>
+    <td mat-cell *matCellDef="let element"> {{element.thMarks}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pracMarks">
+    <th mat-header-cell *matHeaderCellDef>Practical</th>
+    <td mat-cell *matCellDef="let element"> {{element.pracMarks}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="midMarks">
+    <th mat-header-cell *matHeaderCellDef>Midterm</th>
+    <td mat-cell *matCellDef="let element"> {{element.midMarks}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="grdpt">
+    <th mat-header-cell *matHeaderCellDef>Grade Points</th>
+    <td mat-cell *matCellDef="let element"> {{element.grdpt}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="crdpt">
+    <th mat-header-cell *matHeaderCellDef>Credit Points</th>
+    <td mat-cell *matCellDef="let element"> {{element.crdpt}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+<h3 class="back-title" *ngIf="showBack">Backlog Details</h3>
+<table mat-table class="back-table" [dataSource]="dataSourceB" *ngIf="showBack" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="courseno">
+    <th mat-header-cell *matHeaderCellDef >Course No.</th>
+    <td mat-cell *matCellDef="let element"> {{element.courseno}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell class="title-head" *matHeaderCellDef>Title of the Course</th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="thMarks">
+    <th mat-header-cell *matHeaderCellDef>Theory</th>
+    <td mat-cell *matCellDef="let element"> {{element.thMarks}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pracMarks">
+    <th mat-header-cell *matHeaderCellDef>Practical</th>
+    <td mat-cell *matCellDef="let element"> {{element.pracMarks}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="midMarks">
+    <th mat-header-cell *matHeaderCellDef>Midterm</th>
+    <td mat-cell *matCellDef="let element"> {{element.midMarks}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="grdpt">
+    <th mat-header-cell *matHeaderCellDef>Grade Points</th>
+    <td mat-cell *matCellDef="let element"> {{element.grdpt}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="crdpt">
+    <th mat-header-cell *matHeaderCellDef>Credit Points</th>
+    <td mat-cell *matCellDef="let element"> {{element.crdpt}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsB"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsB;"></tr>
+</table>
+
+<br>
+
+<ng-container>
+  <span class="span1">SGPA: {{semMarks[0].SGPA}}</span>
+  <span class="span1">OGPA: {{ogpa}}</span>
+  <br><br>
+</ng-container>
+</ng-container>
+
